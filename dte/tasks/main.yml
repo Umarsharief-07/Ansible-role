@@ -1,0 +1,18 @@
+---
+# tasks file for dte
+
+#
+ 
+- name: install nginx
+  ansible.builtin.apt:
+    state: present
+    update_cache: yes
+- name: copy files
+  ansible.builtin.copy:
+    src: files/index.html
+    dest: /var/www/html
+    owner: root
+    group: root
+    mode: '0644'
+
+
